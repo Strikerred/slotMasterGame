@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "949020425126",
+    "firebase_url": "https://slotmaster-ca564.firebaseio.com",
+    "project_id": "slotmaster-ca564",
+    "storage_bucket": "slotmaster-ca564.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:949020425126:android:726b7acac9099df9a3ad67",
+        "android_client_info": {
+          "package_name": "com.faustogomez.slotmaster"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "949020425126-bi9bdvgus2drogou7nb51uboo84d55lo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxieC2AuMvUJWjZlSww2OVZkJpatuHkPQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "949020425126-bi9bdvgus2drogou7nb51uboo84d55lo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
