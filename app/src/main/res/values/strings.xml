@@ -5,4 +5,6 @@
     <string name="password">Password</string>
     <string name="login">Log In</string>
     <string name="register">Register</string>
+    <string name="auth_button"></string>
+    <string name="spin_button">Spin</string>
 </resources>

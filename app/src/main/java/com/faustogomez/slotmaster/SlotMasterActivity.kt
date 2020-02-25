@@ -10,3 +10,4 @@ class SlotMasterActivity : AppCompatActivity() {
         setContentView(R.layout.activity_slotmaster)
     }
 }
+
