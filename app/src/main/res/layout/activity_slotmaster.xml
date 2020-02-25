@@ -13,8 +13,30 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.5" />
 
+        <TextView
+            android:id="@+id/times_text"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="@string/times_txt"
+            android:textSize="35dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="50dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/spin_times_text"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="@string/spin_times_txt"
+            android:textSize="35dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="50dp"
+            app:layout_constraintStart_toStartOf="@id/times_text"
+            app:layout_constraintTop_toTopOf="parent"/>
+
         <ImageView
-            android:id="@+id/image1"
+            android:id="@+id/leftImage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/cherries"
@@ -22,12 +44,12 @@
             android:maxWidth="100dp"
             android:maxHeight="100dp"
             android:layout_marginEnd="10dp"
-            app:layout_constraintEnd_toStartOf="@id/image2"
+            app:layout_constraintEnd_toStartOf="@id/centerImage"
             app:layout_constraintBottom_toBottomOf="@id/center_guideline"
             />
 
         <ImageView
-            android:id="@+id/image2"
+            android:id="@+id/centerImage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/dollarsign"
@@ -39,7 +61,7 @@
             app:layout_constraintBottom_toBottomOf="@id/center_guideline" />
 
         <ImageView
-            android:id="@+id/image3"
+            android:id="@+id/rightImage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/grapes"
@@ -47,18 +69,39 @@
             android:maxWidth="100dp"
             android:maxHeight="100dp"
             android:layout_marginStart="10dp"
-            app:layout_constraintStart_toEndOf="@id/image2"
+            app:layout_constraintStart_toEndOf="@id/centerImage"
             app:layout_constraintBottom_toBottomOf="@id/center_guideline"/>
 
         <Button
+            android:id="@+id/spin_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/spin_button"
             android:layout_marginTop="75dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/center_guideline"
-            app:layout_constraintEnd_toEndOf="parent"
-            />
+            app:layout_constraintEnd_toEndOf="parent"/>
 
+        <TextView
+            android:id="@+id/display_score_text"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="@string/display_score_txt"
+            android:textSize="35dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginBottom="50dp"
+            app:layout_constraintStart_toStartOf="@id/score_text"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+            android:id="@+id/score_text"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="@string/score_txt"
+            android:textSize="35dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginBottom="50dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

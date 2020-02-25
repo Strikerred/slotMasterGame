@@ -7,4 +7,8 @@
     <string name="register">Register</string>
     <string name="auth_button"></string>
     <string name="spin_button">Spin</string>
+    <string name="score_txt">Score</string>
+    <string name="times_txt">Times</string>
+    <string name="spin_times_txt"></string>
+    <string name="display_score_txt"></string>
 </resources>
