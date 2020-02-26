@@ -2,23 +2,21 @@ package com.faustogomez.slotmaster
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageView
 import kotlinx.android.synthetic.main.activity_slotmaster.*
 
 class SlotMasterActivity : AppCompatActivity() {
 
-    private val slot: List<Slot> = listOf(
-        Slot(R.drawable.cherries, R.drawable.dollarsign, R.drawable.grapes),
-        Slot(R.drawable.dollarsign, R.drawable.cherries, R.drawable.cherries),
-        Slot(R.drawable.grapes, R.drawable.grapes, R.drawable.dollarsign),
-        Slot(R.drawable.lemon, R.drawable.lemon, R.drawable.lemon),
-        Slot(R.drawable.number, R.drawable.number, R.drawable.number)
-    )
+    private val slot: List<Int> = listOf(R.drawable.cherries, R.drawable.dollarsign, R.drawable.grapes, R.drawable.lemon, R.drawable.number)
+    var score = 0
+    var spin_time = 5
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_slotmaster)
 
-        spinSlots()
+        spin_times_text.text = spin_time.toString()
+        display_score_text.text = score.toString()
 
         spin_button.setOnClickListener(){
             spinSlots()
@@ -26,10 +24,33 @@ class SlotMasterActivity : AppCompatActivity() {
     }
 
     private fun spinSlots() {
-        leftImage.setImageResource(slot.random().leftImage)
-        centerImage.setImageResource(slot.random().centerImage)
-        rightImage.setImageResource(slot.random().rightImage)
+        val leftSlot = slot.random()
+        leftImage.setImageResource(leftSlot)
+
+        val centerSlot = slot.random()
+        centerImage.setImageResource(centerSlot)
+
+        val rightSlot = slot.random()
+        rightImage.setImageResource(rightSlot)
+
+        spin_time--
+
+        spin_times_text.setText(spin_time.toString())
+
+        if(spin_time >= 0){
+            if(leftSlot.equals(centerSlot) && leftSlot.equals(rightSlot)){
+                score += 5
+                display_score_text.setText(score.toString())
+            }else if(leftSlot.equals(centerSlot) || leftSlot.equals(rightSlot) || centerSlot.equals(rightSlot)){
+                score += 2
+                display_score_text.setText(score.toString())
+            }
+        }else{
+            spin_time = 5
+            score = 0
+            spin_times_text.text = "5 -> Next Player"
+            display_score_text.setText(score.toString())
+        }
     }
 }
 
-data class Slot(val leftImage: Int, val centerImage: Int, val rightImage: Int)
