@@ -24,11 +24,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        scoresDB = FirebaseDatabase.getInstance().getReference("Scores")
-
         score_list.layoutManager = LinearLayoutManager(this)
 
-        scoresDB.addValueEventListener(object : ValueEventListener{
+        scoresDB = FirebaseDatabase.getInstance().getReference("Scores")
+
+        scoresDB.limitToFirst(10).addValueEventListener(object : ValueEventListener{
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 scores = mutableListOf()
                 dataSnapshot.children.forEach{
@@ -37,6 +37,8 @@ class MainActivity : AppCompatActivity() {
                         scores.add(score)
                     }
                 }
+                scores.sortBy { it.score }
+                scores.reverse()
                 update( )
             }
 
