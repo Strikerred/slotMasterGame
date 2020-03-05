@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@color/colorBlack">
+    android:background="@color/colorBlack"
+    >
 
     <androidx.constraintlayout.widget.Guideline
         android:layout_width="wrap_content"
@@ -13,6 +14,30 @@
         android:id="@+id/center_guideline"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.9"/>
+
+    <TextView
+        android:id="@+id/top_score"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="@string/top_score_text"
+        android:textSize="30dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/score_list"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/score_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorBlack"
+        app:layout_constraintBottom_toTopOf="@id/center_guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/user_score" />
 
     <Button
         android:id="@+id/play_button"

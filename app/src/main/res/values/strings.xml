@@ -11,4 +11,5 @@
     <string name="times_txt">Attempts:</string>
     <string name="spin_times_txt"></string>
     <string name="display_score_txt"></string>
+    <string name="top_score_text">Top Score Players</string>
 </resources>
