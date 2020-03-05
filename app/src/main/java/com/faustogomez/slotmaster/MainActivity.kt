@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
                         scores.add(score)
                     }
                 }
-                update()
+                update( )
             }
 
             override fun onCancelled(p0: DatabaseError) {
